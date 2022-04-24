@@ -1,9 +1,11 @@
 const dataBase = require('./dataBaseConection');
 //dataBase.CreateDataBase();
+//dataBase.CreateTable();
+
+
 var redlineSync = require('readline-sync');
 var option=0;
 
-do {
     console.log("Menu");
     console.log("1 - Criar um produto");
     console.log("2 - Listar todos os produtos");
@@ -14,7 +16,16 @@ do {
 
     switch (option) {
         case 1:
+            
+            var nome;
+            var descricao;
+            var quantidade;
             console.log("==================Criar um produto==================");
+            nome = redlineSync.question('Digite o nome do produto: ');
+            descricao = redlineSync.question('Digite a descricao do produto: ');
+            quantidade = parseInt(redlineSync.question('Digite a quantidade de produtos: '));
+            dataBase.Insert(nome,descricao,quantidade);    
+            
             break;
 
             case 2:
@@ -33,5 +44,10 @@ do {
             break;
     }
 
+   
+          
 
-} while (option<=4);
+        
+    
+
+
