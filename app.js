@@ -5,6 +5,10 @@ const dataBase = require('./dataBaseConection');
 
 var redlineSync = require('readline-sync');
 var option=0;
+var nome;
+var descricao;
+var quantidade;
+var id;
 
     console.log("Menu");
     console.log("1 - Criar um produto");
@@ -17,9 +21,7 @@ var option=0;
     switch (option) {
         case 1:
             
-            var nome;
-            var descricao;
-            var quantidade;
+            
             console.log("==================Criar um produto==================");
             nome = redlineSync.question('Digite o nome do produto: ');
             descricao = redlineSync.question('Digite a descricao do produto: ');
@@ -38,7 +40,10 @@ var option=0;
             break;
 
             case 4:
+            
             console.log("==================Deletar um produto==================");
+            id = parseInt(redlineSync.question('Escolha o id para excluir: '));
+            dataBase.Delete(id);
             break;
 
         default:

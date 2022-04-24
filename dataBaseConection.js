@@ -42,7 +42,7 @@ function Insert(nome,descricao,quantidade){
         ];
         con.query(sql,[values], function (err, result) {
           if (err) throw err;
-          console.log("1 record inserted");
+          console.log("Produto Inserido com sucesso");
         });
       });
 }
@@ -57,10 +57,24 @@ function List() {
       });
 }
 
+function Delete(id){
+    con.connect(function(err) {
+        if (err) throw err;
+        var sql = "DELETE FROM produto WHERE id = ?";
+        var values = [
+            [id]
+        ];
+        con.query(sql,[values], function (err, result) {
+          if (err) throw err;
+          console.log("Produto Deletado com sucesso");
+        });
+      });
+}
+
 module.exports = {
     Insert: Insert,
     List:List,
     CreateDataBase: CreateDataBase,
     CreateTable: CreateTable,
-    
+    Delete:Delete
   };
