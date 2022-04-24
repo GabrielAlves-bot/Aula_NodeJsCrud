@@ -1,5 +1,6 @@
 var mysql = require('mysql')
 
+
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -7,6 +8,7 @@ var con = mysql.createConnection({
 
 })
 
+function CreateDataBase(){
 con.connect(function(err){
     if(err) throw err;
      console.log("Conectado")
@@ -15,3 +17,8 @@ con.connect(function(err){
          console.log("Banco de dados criado")
 })
 })
+}
+
+module.exports = {
+    CreateDataBase: CreateDataBase,
+  };
