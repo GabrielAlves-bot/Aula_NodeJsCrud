@@ -10,4 +10,8 @@ var con = mysql.createConnection({
 con.connect(function(err){
     if(err) throw err;
      console.log("Conectado")
+     con.query("CREATE DATABASE mydb", function(err,result){
+         if (err) throw err
+         console.log("Banco de dados criado")
+})
 })
