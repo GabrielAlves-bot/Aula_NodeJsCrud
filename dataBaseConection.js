@@ -47,8 +47,19 @@ function Insert(nome,descricao,quantidade){
       });
 }
 
+function List() {
+    con.connect(function(err) {
+        if (err) throw err;
+        con.query("SELECT * FROM produto", function (err, result, fields) {
+          if (err) throw err;
+          console.log(result);
+        });
+      });
+}
+
 module.exports = {
     Insert: Insert,
+    List:List,
     CreateDataBase: CreateDataBase,
     CreateTable: CreateTable,
     

@@ -30,6 +30,7 @@ var option=0;
 
             case 2:
             console.log("==================Listar todos os produtos==================");
+            dataBase.List();
             break;
 
             case 3:
