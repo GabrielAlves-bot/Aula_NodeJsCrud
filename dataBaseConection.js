@@ -71,10 +71,22 @@ function Delete(id){
       });
 }
 
+function Update(id,nome,descricao,quantidade) {
+    con.connect(function(err) {
+        if (err) throw err;
+        var sql = "UPDATE produto SET nome = '"+nome+"', descricao = '"+descricao+ "', quantidade = "+quantidade+" WHERE id = "+id;
+        con.query(sql, function (err, result) {
+          if (err) throw err;
+          console.log(result.affectedRows + " record(s) updated");
+        });
+      });
+}
+
 module.exports = {
     Insert: Insert,
     List:List,
     CreateDataBase: CreateDataBase,
     CreateTable: CreateTable,
-    Delete:Delete
+    Delete:Delete,
+    Update:Update
   };

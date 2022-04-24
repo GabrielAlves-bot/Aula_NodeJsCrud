@@ -37,6 +37,13 @@ var id;
 
             case 3:
             console.log("==================Atualizar um produto==================");
+            id = parseInt(redlineSync.question('Escolha o id para editar: '));
+            nome = redlineSync.question('Digite o nome do produto: ');
+            descricao = redlineSync.question('Digite a descricao do produto: ');
+            quantidade = parseInt(redlineSync.question('Digite a quantidade de produtos: '));
+            nome.toString;
+            descricao.toString;
+            dataBase.Update(id,nome,descricao,quantidade);
             break;
 
             case 4:
