@@ -58,4 +58,4 @@ do {
     default:
       break;
   }
-} while (option != 0);
+} while (option >= 1 && option <= 4);
